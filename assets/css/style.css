@@ -14,27 +14,22 @@ body {
   line-height: 1.6;
 }
 
-body::before {
-  content: '';
-  position: fixed;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(20, 157, 221, 0.03) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: -1;
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
+
+
 
 a {
   color: #149ddd;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 a:hover {
   color: #37b3ed;
   text-decoration: none;
-  transform: translateY(-1px);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -473,21 +468,6 @@ section {
   padding: 60px 0;
   overflow: hidden;
   position: relative;
-}
-
-section:nth-child(even) {
-  position: relative;
-}
-
-section:nth-child(even)::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(20, 157, 221, 0.02) 0%, rgba(46, 175, 236, 0.02) 100%);
-  pointer-events: none;
 }
 
 .section-bg {
@@ -1192,16 +1172,21 @@ section:nth-child(even)::before {
 }
 
 .contact .php-email-form button[type="submit"] {
-  background: #149ddd;
+  background: linear-gradient(135deg, #149ddd 0%, #2eafec 100%);
   border: 0;
-  padding: 10px 24px;
+  padding: 12px 30px;
   color: #fff;
-  transition: 0.4s;
-  border-radius: 4px;
+  transition: all 0.3s ease;
+  border-radius: 25px;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(20, 157, 221, 0.3);
+  cursor: pointer;
 }
 
 .contact .php-email-form button[type="submit"]:hover {
-  background: #37b3ed;
+  background: linear-gradient(135deg, #2eafec 0%, #149ddd 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(20, 157, 221, 0.4);
 }
 
 @-webkit-keyframes animate-loading {
