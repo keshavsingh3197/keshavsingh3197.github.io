@@ -31,7 +31,7 @@
 
         $('html, body').animate({
           scrollTop: scrollto
-        }, 1500, 'easeInOutExpo');
+        }, 1000, 'easeInOutExpo');
 
         if ($(this).parents('.nav-menu, .mobile-nav').length) {
           $('.nav-menu .active, .mobile-nav .active').removeClass('active');
@@ -85,19 +85,19 @@
     });
   });
 
-  // Back to top button
+  // Back to top button with improved animation
   $(window).scroll(function() {
     if ($(this).scrollTop() > 100) {
-      $('.back-to-top').fadeIn('slow');
+      $('.back-to-top').fadeIn(400);
     } else {
-      $('.back-to-top').fadeOut('slow');
+      $('.back-to-top').fadeOut(400);
     }
   });
 
   $('.back-to-top').click(function() {
     $('html, body').animate({
       scrollTop: 0
-    }, 1500, 'easeInOutExpo');
+    }, 1200, 'easeInOutExpo');
     return false;
   });
 
@@ -166,10 +166,13 @@
     items: 1
   });
 
-  // Initi AOS
+  // Init AOS with improved settings
   AOS.init({
-    duration: 1000,
-    easing: "ease-in-out-back"
+    duration: 800,
+    easing: "ease-in-out-cubic",
+    once: true,
+    offset: 100,
+    delay: 50
   });
 
 })(jQuery);
